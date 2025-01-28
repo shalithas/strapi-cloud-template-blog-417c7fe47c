@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feed_categories",
+  "info": {
+    "singularName": "feed-category",
+    "pluralName": "feed-categories",
+    "displayName": "FeedCategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "feed_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::feed-item.feed-item",
+      "mappedBy": "feed_category"
+    }
+  }
+}
